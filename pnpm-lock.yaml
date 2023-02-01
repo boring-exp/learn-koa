@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@koa/cors': ^4.0.0
   koa: ^2.14.1
   koa-body: ^6.0.1
   koa-mount: ^4.0.0
@@ -8,6 +9,7 @@ specifiers:
   koa-static: ^5.0.0
 
 dependencies:
+  '@koa/cors': registry.npmjs.org/@koa/cors/4.0.0
   koa: 2.14.1
   koa-body: 6.0.1
   koa-mount: 4.0.0
@@ -647,4 +649,20 @@ packages:
 
   /zod/3.20.2:
     resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
+    dev: false
+
+  registry.npmjs.org/@koa/cors/4.0.0:
+    resolution: {integrity: sha512-Y4RrbvGTlAaa04DBoPBWJqDR5gPj32OOz827ULXfgB1F7piD1MB/zwn8JR2LAnvdILhxUbXbkXGWuNVsFuVFCQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@koa/cors/-/cors-4.0.0.tgz}
+    name: '@koa/cors'
+    version: 4.0.0
+    engines: {node: '>= 14.0.0'}
+    dependencies:
+      vary: registry.npmjs.org/vary/1.1.2
+    dev: false
+
+  registry.npmjs.org/vary/1.1.2:
+    resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/vary/-/vary-1.1.2.tgz}
+    name: vary
+    version: 1.1.2
+    engines: {node: '>= 0.8'}
     dev: false

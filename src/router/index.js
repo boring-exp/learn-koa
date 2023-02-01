@@ -24,11 +24,21 @@ function fail(msg, statusCode = -1) {
 
 // 写路由规则
 router.post('/login', (ctx) => {
+    const {username, password} = ctx.request.body
+    const user = {
+        name: '123456',
+        password: '123456'
+    }
+    if (username === user.name && password === user.password) {
+        ctx.body = success({info: user})
+    } else {
+        ctx.body = fail('用户名或者密码错误')
+    }
     // 查询参数从 ctx.request.query
     // body参数从 ctx.request.body
-    ctx.body = success({
-        body: ctx.request.body
-    })
+    // ctx.body = success({
+    //     body: ctx.request.body
+    // })
 })
 
 router.get('/user', (ctx) => {
@@ -40,9 +50,9 @@ module.exports = {
 }
 
 
-@Get('/user') function handleUser(ctx) => {
-    ctx.body = fail('反正就是失败了，我也不知道为啥会', 3001)
-}
+// @Get('/user') function handleUser(ctx) => {
+//     ctx.body = fail('反正就是失败了，我也不知道为啥会', 3001)
+// }
 // 函数注册的时候，繁琐
 // 把函数，与某个路径和请求方法关联上
 

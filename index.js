@@ -3,6 +3,7 @@ const Koa = require('koa')
 const KoaMount = require('koa-mount')
 const KoaStatic = require('koa-static')
 const { koaBody } = require('koa-body')
+const KoaCors = require('@koa/cors')
 const path = require('path')
 const {router} = require('./src/router/index')
 
@@ -21,6 +22,9 @@ const middleStatic = KoaStatic('./static', {
 // 网站
 const mainSite = KoaStatic('./website')
 
+
+// 跨域问题
+app.use(KoaCors());
 // 1.开发一个静态文件服务器
 app.use(KoaMount('/download', middleStatic))
 app.use(mainSite)
@@ -44,6 +48,6 @@ app.use(router.routes()).use(router.allowedMethods())
 // })
 
 // 启动服务器，监听端口
-app.listen(3000, 'localhost', () => {
+app.listen(3000, '127.0.0.1', () => {
     console.log('server is listening on http://localhost:3000')
 })
