@@ -5,7 +5,8 @@ const KoaStatic = require('koa-static')
 const { koaBody } = require('koa-body')
 const KoaCors = require('@koa/cors')
 const path = require('path')
-const {router} = require('./src/router/index')
+const { router } = require('./src/router/index')
+const { createContext } = require('vm')
 
 const STATIC_FILE_URL = path.join(__dirname, './static')
 const DOWNLOAD_URL = 'http://localhost:3000/download'
@@ -21,7 +22,6 @@ const middleStatic = KoaStatic('./static', {
 
 // 网站
 const mainSite = KoaStatic('./website')
-
 
 // 跨域问题
 app.use(KoaCors());
