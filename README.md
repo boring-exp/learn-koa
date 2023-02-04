@@ -38,5 +38,9 @@ async function test(ctx, next) {
 + /api
 TODO: 所有的api增删改查操作
 
+## 数据库配置
+
+[详细说明请点击](./docs//database.md)
+
 
 
