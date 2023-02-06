@@ -7,6 +7,8 @@ const KoaCors = require('@koa/cors')
 const path = require('path')
 const { router } = require('./src/router/index')
 const { createContext } = require('vm')
+// self middleware
+const jwtMiddle = require('./src/middleware/koa-jwt')
 
 const STATIC_FILE_URL = path.join(__dirname, './static')
 const DOWNLOAD_URL = 'http://localhost:3000/download'
@@ -20,6 +22,7 @@ const middleStatic = KoaStatic('./static', {
     }
 })
 
+app.use(jwtMiddle)
 // 网站
 const mainSite = KoaStatic('./website')
 
