@@ -55,6 +55,7 @@ app.use(router.routes()).use(router.allowedMethods())
 // })
 
 // 启动服务器，监听端口
-app.listen(3000, '127.0.0.1', () => {
+// 10.3.0.62
+app.listen(3000, '10.3.0.62', () => {
     console.log('server is listening on http://localhost:3000')
 })

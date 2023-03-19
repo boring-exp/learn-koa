@@ -21,7 +21,7 @@ router.get('/third/event', async (ctx) => {
     // TODO: 给前端页面做推送
     // 1. HTTP
     // 2. WebSockt
-    //    制订一个通信标准（事件类型名称，事件参数）  
+    //    制订一个通信标准（事件类型名称，事件参数） 
     ctx.body = 'success'
 })
 
