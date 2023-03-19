@@ -54,8 +54,11 @@ app.use(router.routes()).use(router.allowedMethods())
 //     }
 // })
 
+const { initWSserver } = require('./src/utils/websocket')
+initWSserver() // localhost:8090
 // 启动服务器，监听端口
 // 10.3.0.62
-app.listen(3000, '10.3.0.62', () => {
-    console.log('server is listening on http://localhost:3000')
+const host = '10.3.0.62'
+app.listen(3000, host, () => {
+    console.log(`server is listening on http://${host}:3000`)
 })
