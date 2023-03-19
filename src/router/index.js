@@ -15,6 +15,15 @@ router.post('/user/add', addUserCtrl)
 // 上传文件
 router.post('/upload', uploadCtrl)
 router.post('/upload/multi', uploadMultiCtrl)
+router.get('/third/event', async (ctx) => {
+    const eventType = ctx.request.query.type;
+    console.log(eventType)
+    // TODO: 给前端页面做推送
+    // 1. HTTP
+    // 2. WebSockt
+    //    制订一个通信标准（事件类型名称，事件参数）  
+    ctx.body = 'success'
+})
 
 module.exports = {
     router
